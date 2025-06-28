@@ -114,14 +114,17 @@ export const handleKeyDown = ({
     handleDelete(canvas, deleteShapeFromStorage);
   }
 
+  // check if the key pressed is ctrl/cmd + y (redo)
+  // if ((e?.ctrlKey || e?.metaKey) && e.keyCode === 89) {
+  //   redo();
+  // }
+  if ((e?.ctrlKey || e?.metaKey) && e.shiftKey && e.keyCode === 90) {
+    redo();
+  }
+
   // check if the key pressed is ctrl/cmd + z (undo)
   if ((e?.ctrlKey || e?.metaKey) && e.keyCode === 90) {
     undo();
-  }
-
-  // check if the key pressed is ctrl/cmd + y (redo)
-  if ((e?.ctrlKey || e?.metaKey) && e.keyCode === 89) {
-    redo();
   }
 
   if (e.keyCode === 191 && !e.shiftKey) {

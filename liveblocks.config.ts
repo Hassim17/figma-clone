@@ -1,91 +1,83 @@
-// liveblocks.d.ts
-import type { LiveMap } from "@liveblocks/client";
+import { LiveMap, createClient } from "@liveblocks/client";
 import { createRoomContext } from "@liveblocks/react";
-import { createClient } from "@liveblocks/client";
-
-// import { client } from "./liveblocksClient"; // import the client you created
 
 const client = createClient({
-	throttle: 16,
-	publicApiKey: process.env.NEXT_PUBLIC_LIVEBLOCKS_PUBLIC_KEY!,
+  throttle: 16,
+  publicApiKey: process.env.NEXT_PUBLIC_LIVEBLOCKS_PUBLIC_KEY!,
+  async resolveUsers({ userIds }) {
+    // Implement actual user resolution logic
+    return [];
+  },
+  async resolveMentionSuggestions({ text, roomId }) {
+    // Implement actual mentions logic
+    return [];
+  },
 });
 
 type Presence = {
-	// cursor: { x: number, y: number } | null,
-	// ...
+  // cursor: { x: number, y: number } | null,
+  // ...
 };
 
-// Optionally, Storage represents the shared document that persists in the
-// Room, even after all users leave. Fields under Storage typically are
-// LiveList, LiveMap, LiveObject instances, for which updates are
-// automatically persisted and synced to all connected clients.
 type Storage = {
-	// author: LiveObject<{ firstName: string, lastName: string }>,
-	// ...
-	canvasObjects: LiveMap<string, any>;
+  canvasObjects: LiveMap<string, any>;
 };
 
-// Optionally, UserMeta represents static/readonly metadata on each user, as
-// provided by your own custom auth back end (if used). Useful for data that
-// will not change during a session, like a user's name or avatar.
 type UserMeta = {
-	// id?: string,  // Accessible through `user.id`
-	// info?: Json,  // Accessible through `user.info`
+  // id?: string,  // Accessible through `user.id`
+  // info?: Json,  // Accessible through `user.info`
 };
 
-// Optionally, the type of custom events broadcast and listened to in this
-// room. Use a union for multiple events. Must be JSON-serializable.
 type RoomEvent = {
-	// type: "NOTIFICATION",
-	// ...
+  // type: "NOTIFICATION",
+  // ...
 };
 
-// Optionally, when using Comments, ThreadMetadata represents metadata on
-// each thread. Can only contain booleans, strings, and numbers.
 export type ThreadMetadata = {
-	resolved: boolean;
-	zIndex: number;
-	time?: number;
-	x: number;
-	y: number;
+  resolved: boolean;
+  zIndex: number;
+  time?: number;
+  x: number;
+  y: number;
 };
 
 export const {
-	suspense: {
-		RoomProvider,
-		useRoom,
-		useMyPresence,
-		useUpdateMyPresence,
-		useSelf,
-		useOthers,
-		useOthersMapped,
-		useOthersConnectionIds,
-		useOther,
-		useBroadcastEvent,
-		useEventListener,
-		useErrorListener,
-		useStorage,
-		// useObject,
-		// useMap,
-		// useList,
-		useHistory,
-		useUndo,
-		useRedo,
-		useCanUndo,
-		useCanRedo,
-		useMutation,
-		useStatus,
-		useLostConnectionListener,
-		useThreads,
-		useUser,
-		useCreateThread,
-		useEditThreadMetadata,
-		useCreateComment,
-		useEditComment,
-		useDeleteComment,
-		useAddReaction,
-		useRemoveReaction,
-	},
+  suspense: {
+    RoomProvider,
+    useRoom,
+    useMyPresence,
+    useUpdateMyPresence,
+    useSelf,
+    useOthers,
+    useOthersMapped,
+    useOthersConnectionIds,
+    useOther,
+    useBroadcastEvent,
+    useEventListener,
+    useErrorListener,
+    useStorage,
+    useObject,
+    useMap,
+    useList,
+    useBatch,
+    useHistory,
+    useUndo,
+    useRedo,
+    useCanUndo,
+    useCanRedo,
+    useMutation,
+    useStatus,
+    useLostConnectionListener,
+    useThreads,
+    useUser,
+    useCreateThread,
+    useEditThreadMetadata,
+    useCreateComment,
+    useEditComment,
+    useDeleteComment,
+    useAddReaction,
+    useRemoveReaction,
+  },
 } = createRoomContext<Presence, Storage, UserMeta, RoomEvent, ThreadMetadata>(
-	client
+  client
 );
