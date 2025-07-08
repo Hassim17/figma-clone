@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+🖌️ figma-clone
+A simplified Figma-style collaborative design tool built with Next.js, Liveblocks, and Fabric.js.
+Supports real-time multiplayer editing, cursor presence, comment threads, and basic shape drawing — built purely for learning and experimentation.
 
-## Getting Started
+✨ Features
+🟦 Create and manipulate canvas objects (shapes, elements).
 
-First, run the development server:
+🎛️ View and edit properties of selected canvas items.
 
-```bash
+👥 Real-time multiplayer collaboration across users.
+
+💬 Add comments, emojis, and mention other users.
+
+⚡ Instant updates for all actions across sessions using Liveblocks.
+
+📚 Layer listing and management (like Figma).
+
+😄 Express reactions (e.g., emojis, presence indicators) across users.
+
+🧩 Built to mimic Figma's core interaction mechanics.
+
+🛠️ Tech Stack
+Layer	Technology Used
+Frontend	Next.js, Tailwind CSS, shadcn/ui
+Canvas Engine	Fabric.js
+Realtime Sync	Liveblocks
+
+🚀 Getting Started
+1. Clone the Repository
+bash
+Copy
+Edit
+git clone https://github.com/your-username/figma-clone.git
+cd figma-clone
+2. Install Dependencies
+bash
+Copy
+Edit
+npm install
+3. Set Up Environment Variables
+Create a .env.local file at the root of your project:
+
+env
+Copy
+Edit
+NEXT_PUBLIC_LIVEBLOCKS_PUBLIC_KEY=your_public_liveblocks_key_here
+🔑 Replace the placeholder with your actual Liveblocks public key.
+
+4. Run the Development Server
+bash
+Copy
+Edit
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open your browser and navigate to http://localhost:3000.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🧪 Testing
+There are no automated tests included in this project as it's built for experimentation. You can explore real-time features by opening the app in multiple tabs or different devices.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🔐 Authentication & Authorization
+This project does not include user authentication. Realtime collaboration is managed entirely via Liveblocks' presence and storage APIs.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+📡 API Reference
+No REST or GraphQL APIs are used.
+All state synchronization, storage, presence, and events are managed via Liveblocks.
 
-## Learn More
+For more details, refer to Liveblocks Documentation.
 
-To learn more about Next.js, take a look at the following resources:
+🎯 Use Cases
+💡 Learning how real-time collaborative apps like Figma work.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🧪 Experimenting with Liveblocks and canvas-based UI.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+🎨 Building your own design tool prototype.
 
-## Deploy on Vercel
+👨‍💻 Understanding shared state and presence synchronization in a team-based environment.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🚧 Future Improvements (Optional)
+Add user authentication (e.g., Auth.js or Firebase).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Export/import canvas files.
+
+Support image uploads or more complex shapes.
+
+Add keyboard shortcuts for quick design actions.
+
+Enhance comment threading and notification system.
+
+👨‍💻 Author & Credits
+Built by Mohammed Hassim
