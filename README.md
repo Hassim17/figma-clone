@@ -100,9 +100,4 @@ All state synchronization, storage, presence, and events are managed via **Liveb
 - Support image uploads or more complex shapes.
 - Add keyboard shortcuts for quick design actions.
 - Enhance comment threading and notification system.
-
----
-
-## 👨‍💻 Author & Credits
-
-Built by **Mohammed Hassim**  
+ 
