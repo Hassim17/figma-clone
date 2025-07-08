@@ -45,7 +45,7 @@ npm install
 
 ### 3. Set Up Environment Variables
 
-Create a \`.env.local\` file at the root of your project:
+Create a `.env.local` file at the root of your project:
 
 ```env
 NEXT_PUBLIC_LIVEBLOCKS_PUBLIC_KEY=your_public_liveblocks_key_here
@@ -55,9 +55,9 @@ NEXT_PUBLIC_LIVEBLOCKS_PUBLIC_KEY=your_public_liveblocks_key_here
 
 ### 4. Run the Development Server
 
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 Open your browser and navigate to \`http://localhost:3000\`.
 
