@@ -32,24 +32,24 @@ Supports real-time multiplayer editing, cursor presence, comment threads, and ba
 
 ### 1. Clone the Repository
 
-\`\`\`bash
+```bash
 git clone https://github.com/your-username/figma-clone.git
 cd figma-clone
-\`\`\`
+```
 
 ### 2. Install Dependencies
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 ### 3. Set Up Environment Variables
 
 Create a \`.env.local\` file at the root of your project:
 
-\`\`\`env
+```env
 NEXT_PUBLIC_LIVEBLOCKS_PUBLIC_KEY=your_public_liveblocks_key_here
-\`\`\`
+```
 
 > 🔑 Replace the placeholder with your actual [Liveblocks](https://liveblocks.io/) public key.
 
